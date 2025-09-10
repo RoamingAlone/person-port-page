@@ -1,0 +1,121 @@
+:root{
+  --ink:#0f2b46;         /* sidebar navy */
+  --accent:#2f84c2;      /* blue accent */
+  --paper:#ffffff;
+  --text:#2b2b2b;
+  --muted:#6e7a86;
+  --line:#e6e9ed;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:#f5f7fb;
+  color:var(--text);
+  font:400 14px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Layout */
+.resume{
+  max-width:960px;
+  margin:32px auto;
+  background:var(--paper);
+  box-shadow:0 8px 30px rgba(15,43,70,.08);
+  display:grid;
+  grid-template-columns: 300px 1fr;  /* left fixed, right fluid */
+  min-height: 100vh;
+}
+.left{
+  background:var(--ink);
+  color:#f4f8fc;
+  padding:36px 28px;
+}
+.right{
+  padding:40px 42px;
+}
+
+/* Sidebar */
+.avatar{
+  width:140px;height:140px;border-radius:50%;
+  object-fit:cover; display:block; margin:0 auto 20px;
+  border:5px solid rgba(255,255,255,.13);
+  background-color: #afc31a;
+}
+.side-h{
+  text-align:center;
+  margin:18px 0 10px;
+  font:800 13px/1.2 Montserrat, Inter, sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+}
+.info, .list{list-style:none; padding:0; margin:0 0 14px}
+.info li, .list li{margin:8px 0}
+.info i{width:18px; opacity:.95; margin-right:8px}
+
+/* Header (right) */
+.head h1{
+  margin:0;
+  font:800 36px/1.1 Montserrat, Inter, sans-serif;
+  letter-spacing:.5px;
+}
+.head .last{color:var(--accent)}
+.role{
+  margin:6px 0 0;
+  color:#586473;
+  font-weight:600;
+  letter-spacing:.1em;
+}
+.underline{
+  width:70px;height:4px;background:var(--accent);
+  border-radius:6px; margin:14px 0 22px;
+}
+
+/* Section headings */
+.sec-h{
+  margin:0 0 8px;
+  font:800 16px/1.2 Montserrat, Inter, sans-serif;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#2c3b4a;
+  border-bottom: 2px solid #2c3b4a;
+  padding-bottom: 6px;
+}
+
+.experience{
+ border-left: 4px solid #1e3d5a; 
+  padding-left: 18px;
+  margin-left: 4px; 
+}
+
+/* Jobs */
+.job{padding:14px 0; border-bottom:1px solid var(--line)}
+.job:last-child{border-bottom:none}
+.job-top{
+  display:flex; gap:12px; align-items:baseline; flex-wrap:wrap;
+}
+.job-who{font-weight:600}
+.job-date{margin-left:auto; color:var(--muted)}
+.job ul{margin:8px 0 0 0; padding-left:18px}
+.job li{margin:6px 0}
+
+/* Responsive */
+@media (max-width: 860px){
+  .resume{grid-template-columns: 1fr}
+}
+@media print{
+  body{background:#fff}
+  .resume{box-shadow:none; margin:0}
+  a{color:inherit; text-decoration:none}
+}
+
+.references {
+  display: flex;              
+  justify-content: space-between;
+  gap: 20px;                  
+  margin-top: 10px;
+}
+
+.ref {
+  flex: 1;                    
+  padding: 10px;
+}
